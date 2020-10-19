@@ -1,6 +1,6 @@
 <template>
   <div id="post-create">
-    <h1>NOVO POST</h1>
+    <h1>Novo Post</h1>
     <b-form @submit="onSubmit" @reset="onReset" v-if="show">
       <b-form-group
         id="input-group-1"
