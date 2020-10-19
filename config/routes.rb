@@ -6,5 +6,5 @@ Rails.application.routes.draw do
   end
 
   root to: 'landing#index'
-  get '/*path', to: 'application#index', format: false
+  get '/*path', to: 'landing#index', format: false
 end
