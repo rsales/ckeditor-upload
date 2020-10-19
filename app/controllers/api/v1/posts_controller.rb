@@ -46,15 +46,15 @@ class Api::V1::PostsController < Api::V1::ApiController
     # end
   end
 
-  private
+  # private
 
-  def posts_params
-  #   params.require(:list).permit(
-  #     :name, :purchase_date, :total_price, 
-  #     :total_products, :completed, 
-  #     products_attributes: [
-  #       :uuid, :name, :quantity, :purchased, 
-  #       :price, :total_price, :_destroy
-  #     ])
+  # def posts_params
+  # #   params.require(:list).permit(
+  # #     :name, :purchase_date, :total_price, 
+  # #     :total_products, :completed, 
+  # #     products_attributes: [
+  # #       :uuid, :name, :quantity, :purchased, 
+  # #       :price, :total_price, :_destroy
+  # #     ])
   # end
 end
