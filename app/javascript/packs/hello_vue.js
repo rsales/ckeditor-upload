@@ -9,9 +9,14 @@ import Vue from 'vue'
 import App from '../src/App.vue'
 import router from "../src/router";
 import CKEditor from '@ckeditor/ckeditor5-vue';
-import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+import { BootstrapVue, IconsPlugin } from 'bootstrap-vue';
+
+import('bootstrap/dist/css/bootstrap.css')
+import('bootstrap-vue/dist/bootstrap-vue.css')
 
 Vue.use( CKEditor );
+Vue.use(BootstrapVue);
+Vue.use(IconsPlugin);
 
 document.addEventListener('DOMContentLoaded', () => {
   const app = new Vue({
