@@ -932,6 +932,16 @@
     "@ckeditor/ckeditor5-typing" "^23.0.0"
     "@ckeditor/ckeditor5-undo" "^23.0.0"
 
+"@ckeditor/ckeditor5-heading@^23.0.0":
+  version "23.0.0"
+  resolved "https://registry.yarnpkg.com/@ckeditor/ckeditor5-heading/-/ckeditor5-heading-23.0.0.tgz#4f1109832790d4423f0bfdd7da6bbf1352247128"
+  integrity sha512-pW1jY8ZakrrVAbmM3lTdxaY1ZbJD+7UMzAkLM/K+sIzxImaoIQaLjERLof4WfbCAEM2v9PFax1RGKELFLLnJAg==
+  dependencies:
+    "@ckeditor/ckeditor5-core" "^23.0.0"
+    "@ckeditor/ckeditor5-paragraph" "^23.0.0"
+    "@ckeditor/ckeditor5-ui" "^23.0.0"
+    "@ckeditor/ckeditor5-utils" "^23.0.0"
+
 "@ckeditor/ckeditor5-image@^23.0.0":
   version "23.0.0"
   resolved "https://registry.yarnpkg.com/@ckeditor/ckeditor5-image/-/ckeditor5-image-23.0.0.tgz#a86d09190e2d9f4b940d1279189376a17d257f25"
