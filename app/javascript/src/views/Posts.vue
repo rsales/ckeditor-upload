@@ -1,6 +1,7 @@
 <template>
   <div id="posts">
     <p>{{ message }}</p>
+    <router-link to="/new">Criar novo post</router-link>
   </div>
 </template>
 

@@ -8,6 +8,9 @@
 import Vue from 'vue'
 import App from '../src/App.vue'
 import router from "../src/router";
+import CKEditor from '@ckeditor/ckeditor5-vue';
+
+Vue.use( CKEditor );
 
 document.addEventListener('DOMContentLoaded', () => {
   const app = new Vue({
