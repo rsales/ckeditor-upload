@@ -25,6 +25,18 @@ gem 'jbuilder', '~> 2.7'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
+# Classier solution for file uploads for Rails, Sinatra and other Ruby web frameworks
+gem 'carrierwave'
+# Upload files encoded as base64 strings directly to carrierwave
+gem 'carrierwave-base64'
+# The Ruby cloud services library.
+gem 'fog'
+# Simple Rails app configuration
+gem 'figaro'
+# A wrapper library to bring Unicode Normalization Form support to Ruby/JRuby
+gem 'unf'
+
+
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 
