@@ -1,6 +1,7 @@
 <template>
   <div class="pt-3" id="posts">
     <router-link :to="{ name: 'Posts'}">👈 Voltar</router-link>
+    <router-link class="float-right" :to="{name: 'PostEdit', params: { id: post.id }}">✍️ Editar post {{ post.id }}</router-link>
     <h1 class="mt-3">{{ post.title }}</h1>
     <p>{{ post.description }}</p>
     <hr />
@@ -35,3 +36,9 @@ export default {
   }
 }
 </script>
+
+<style>
+  .content-post img {
+    width: 100%;
+  }
+</style>

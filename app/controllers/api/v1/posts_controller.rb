@@ -26,24 +26,24 @@ class Api::V1::PostsController < Api::V1::ApiController
 
   # PATCH OR PUT /api/v1/posts/1
   def update
-    # @list = List.find(params[:id])
+    @post = Post.find(params[:id])
 
-    # if @list.update(list_params)
-    #   render json: @list, status: :ok
-    # else
-    #   render json: @list.errors, status: :unprocessable_entity
-    # end
+    if @list.update(post_params)
+      render json: @post, status: :ok
+    else
+      render json: @post.errors, status: :unprocessable_entity
+    end
   end
 
   # DELETE /api/v1/posts/1
   def destroy
-    # @list = List.find(params[:id])
+    @post = Post.find(params[:id])
 
-    # if @list.destroy
-    #   head(:ok)
-    # else
-    #   head(:unprocessable_entity)
-    # end
+    if @post.destroy
+      head(:ok)
+    else
+      head(:unprocessable_entity)
+    end
   end
 
   private

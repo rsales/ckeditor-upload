@@ -2,7 +2,7 @@
   <div class="pt-3" id="post-create">
     <router-link :to="{ name: 'Posts'}">👈 Voltar</router-link>
     <h1>Novo Post</h1>
-    <b-form @submit="onSubmit" @reset="onReset" v-if="show">
+    <b-form @submit="onSubmit" @reset="onReset">
       <b-form-group
         id="input-group-1"
         label="Título:"
@@ -67,7 +67,6 @@ export default {
         description: '',
         body: '<p>Content of the editor.</p>'
       },
-      show: true,
       submitted: false,
       errors: [],
       editor: ClassicEditor,
@@ -101,18 +100,14 @@ export default {
       this.form.title = ''
       this.form.description = ''
       this.form.body = '<p>Content of the editor.</p>'
-      this.$nextTick(() => {
-        this.show = true
-      })
     },
     savePost() {
       var data = JSON.stringify(this.form);
 
       PostDataService.create(data)
         .then(response => {
-          this.tutorial.id = response.data.id;
           this.submitted = true;
-          this.$route.push({ name: 'Posts' })
+          this.$router.push({ name: 'Posts' })
         })
         .catch(e => {
           this.submitted = false;
