@@ -36,7 +36,6 @@ gem 'figaro'
 # A wrapper library to bring Unicode Normalization Form support to Ruby/JRuby
 gem 'unf'
 
-
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 
@@ -54,6 +53,8 @@ group :development, :test do
 end
 
 group :development do
+  # Avoid repeating yourself, use pry-rails instead of copying the initializer to every rails project.
+  gem 'pry-rails'
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
   gem 'web-console', '>= 3.3.0'
   gem 'listen', '~> 3.2'
