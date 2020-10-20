@@ -8,13 +8,13 @@ class Api::V1::PostsController < Api::V1::ApiController
   
   # POST /api/v1/posts
   def create
-    # @list = List.new(list_params)
+    @post = Post.new(post_params)
     
-    # if @list.save
-    #   render json: @list, status: :created
-    # else
-    #   render json: @list.errors, status: :unprocessable_entity
-    # end
+    if @post.save
+      render json: @post, status: :created
+    else
+      render json: @post.errors, status: :unprocessable_entity
+    end
   end
 
   # GET /api/v1/posts/1
@@ -46,15 +46,11 @@ class Api::V1::PostsController < Api::V1::ApiController
     # end
   end
 
-  # private
+  private
 
-  # def posts_params
-  # #   params.require(:list).permit(
-  # #     :name, :purchase_date, :total_price, 
-  # #     :total_products, :completed, 
-  # #     products_attributes: [
-  # #       :uuid, :name, :quantity, :purchased, 
-  # #       :price, :total_price, :_destroy
-  # #     ])
-  # end
+  def post_params
+    params.require(:post).permit(
+      :title, :description, :body
+    )
+  end
 end

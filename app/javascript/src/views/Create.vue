@@ -45,8 +45,9 @@
 </template>
 
 <script>
-import ClassicEditor from '@ckeditor/ckeditor5-editor-classic/src/classiceditor';
+import { PostDataService } from '../services';
 
+import ClassicEditor from '@ckeditor/ckeditor5-editor-classic/src/classiceditor';
 import Heading from '@ckeditor/ckeditor5-heading/src/heading';
 import BoldPlugin from '@ckeditor/ckeditor5-basic-styles/src/bold';
 import EssentialsPlugin from '@ckeditor/ckeditor5-essentials/src/essentials';
@@ -67,6 +68,8 @@ export default {
         body: '<p>Content of the editor.</p>'
       },
       show: true,
+      submitted: false,
+      errors: [],
       editor: ClassicEditor,
       editorConfig: {
         plugins: [
@@ -91,24 +94,31 @@ export default {
   methods: {
     onSubmit(evt) {
       evt.preventDefault()
-      alert(JSON.stringify(this.form))
+      this.savePost()
     },
     onReset(evt) {
       evt.preventDefault()
       this.form.title = ''
       this.form.description = ''
-      this.form.body = ''
+      this.form.body = '<p>Content of the editor.</p>'
       this.$nextTick(() => {
         this.show = true
       })
+    },
+    savePost() {
+      var data = JSON.stringify(this.form);
+
+      PostDataService.create(data)
+        .then(response => {
+          this.tutorial.id = response.data.id;
+          this.submitted = true;
+          this.$route.push({ name: 'Posts' })
+        })
+        .catch(e => {
+          this.submitted = false;
+          this.errors.push(e)
+        });
     }
   }
 }
 </script>
-
-<style scoped>
-p {
-  font-size: 2em;
-  text-align: center;
-}
-</style>
