@@ -28,7 +28,7 @@ class Api::V1::PostsController < Api::V1::ApiController
   def update
     @post = Post.find(params[:id])
 
-    if @list.update(post_params)
+    if @post.update(post_params)
       render json: @post, status: :ok
     else
       render json: @post.errors, status: :unprocessable_entity
