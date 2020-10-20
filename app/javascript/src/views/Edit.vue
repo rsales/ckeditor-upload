@@ -119,12 +119,13 @@ export default {
     },
     savePost() {
       var data = JSON.stringify(this.form);
+      var id = this.$route.params.id;
 
-      PostDataService.create(data)
+      PostDataService.update(id, data)
         .then(response => {
-          this.tutorial.id = response.data.id;
+          var postId = response.data.id;
           this.submitted = true;
-          this.$router.push({ name: 'Posts' })
+          this.$router.push({ name: 'Post', params: { id: postId }});
         })
         .catch(e => {
           this.submitted = false;
