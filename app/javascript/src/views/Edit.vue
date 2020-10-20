@@ -1,7 +1,7 @@
 <template>
   <div class="pt-3" id="post-edit">
     <router-link :to="{ name: 'Posts'}">👈 Voltar</router-link>
-    <h1>Novo Post</h1>
+    <h1>Editar Post #{{ this.$route.params.id  }}</h1>
     <b-form @submit="onSubmit" @reset="onReset" v-if="show">
       <b-form-group
         id="input-group-1"
@@ -38,7 +38,7 @@
 
       <br />
 
-      <b-button type="submit" variant="primary">Criar</b-button>
+      <b-button type="submit" variant="primary">Editar</b-button>
       <b-button type="reset" variant="danger">Reset</b-button>
     </b-form>
   </div>
