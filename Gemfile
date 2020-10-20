@@ -31,6 +31,11 @@ gem 'bootsnap', '>= 1.4.2', require: false
 # Process manager for applications with multiple components
 gem 'foreman'
 
+# Rack Middleware for handling Cross-Origin Resource Sharing (CORS), which makes cross-origin AJAX possible.
+gem 'rack-cors'
+# Rack middleware for blocking & throttling
+gem 'rack-attack'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
