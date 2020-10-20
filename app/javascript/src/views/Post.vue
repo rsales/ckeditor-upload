@@ -36,9 +36,3 @@ export default {
   }
 }
 </script>
-
-<style>
-  .content-post img {
-    width: 100%;
-  }
-</style>
