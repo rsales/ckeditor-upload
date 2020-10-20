@@ -25,17 +25,6 @@ gem 'jbuilder', '~> 2.7'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
-# Classier solution for file uploads for Rails, Sinatra and other Ruby web frameworks
-gem 'carrierwave'
-# Upload files encoded as base64 strings directly to carrierwave
-gem 'carrierwave-base64'
-# The Ruby cloud services library.
-gem 'fog'
-# Simple Rails app configuration
-gem 'figaro'
-# A wrapper library to bring Unicode Normalization Form support to Ruby/JRuby
-gem 'unf'
-
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 
@@ -46,6 +35,18 @@ gem 'foreman'
 gem 'rack-cors'
 # Rack middleware for blocking & throttling
 gem 'rack-attack'
+
+# Classier solution for file uploads for Rails, Sinatra and other Ruby web frameworks
+gem 'carrierwave'
+# Upload files encoded as base64 strings directly to carrierwave
+gem 'carrierwave-base64'
+# The Ruby cloud services library. 
+# Module for the 'fog' gem to support Amazon Web Services http://aws.amazon.com/
+gem 'fog-aws'
+# Simple Rails app configuration
+gem 'figaro'
+# A wrapper library to bring Unicode Normalization Form support to Ruby/JRuby
+gem 'unf'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
