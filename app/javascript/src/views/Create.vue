@@ -1,10 +1,11 @@
 <template>
-  <div id="post-create">
+  <div class="pt-3" id="post-create">
+    <router-link :to="{ name: 'Posts'}">👈 Voltar</router-link>
     <h1>Novo Post</h1>
     <b-form @submit="onSubmit" @reset="onReset" v-if="show">
       <b-form-group
         id="input-group-1"
-        label="Title:"
+        label="Título:"
         label-for="input-1"
       >
         <b-form-input

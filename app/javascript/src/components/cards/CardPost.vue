@@ -1,5 +1,5 @@
 <template>
-  <b-list-group-item href="#" class="card-post flex-column align-items-start">
+  <b-list-group-item :to="{ name: 'Post', params: { id: post.id }}" class="card-post flex-column align-items-start">
     <div class="d-flex w-100 justify-content-between">
       <h5 class="mb-1">{{ post.title }}</h5>
       <small>{{ dayjs(post.created_at).format('DD MMM') }}</small>

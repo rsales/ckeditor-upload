@@ -1,6 +1,11 @@
 <template>
-  <div id="posts">
-    <h1>Posts</h1>
+  <div class="pt-3" id="posts">
+    <h1 class="mb-3">
+      Posts
+      <small class="text-muted">
+        <router-link class="float-right" :to="{ name: 'PostCreate'}">✍️ Criar novo post</router-link>
+      </small>
+    </h1>
     <b-list-group class="all-posts">
       <card-post
         v-for="post in posts"
@@ -8,8 +13,6 @@
         :post="post"
       />
     </b-list-group>
-
-    <!-- <router-link to="/new">Criar novo post</router-link> -->
   </div>
 </template>
 

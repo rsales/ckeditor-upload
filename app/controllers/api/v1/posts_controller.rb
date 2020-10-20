@@ -19,9 +19,9 @@ class Api::V1::PostsController < Api::V1::ApiController
 
   # GET /api/v1/posts/1
   def show
-    # @list = List.find(params[:id])
+    @post = Post.find(params[:id])
 
-    # render json: @list, status: :ok
+    render json: @post, status: :ok
   end
 
   # PATCH OR PUT /api/v1/posts/1
