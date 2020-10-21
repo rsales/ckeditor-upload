@@ -57,7 +57,8 @@ import ParagraphPlugin from '@ckeditor/ckeditor5-paragraph/src/paragraph';
 import Image from '@ckeditor/ckeditor5-image/src/image';
 import ImageStyle from '@ckeditor/ckeditor5-image/src/imagestyle';
 import ImageUpload from '@ckeditor/ckeditor5-image/src/imageupload';
-import Base64UploadAdapter from '@ckeditor/ckeditor5-upload/src/adapters/base64uploadadapter';
+import SimpleUploadAdapter from '@ckeditor/ckeditor5-upload/src/adapters/simpleuploadadapter';
+// import Base64UploadAdapter from '@ckeditor/ckeditor5-upload/src/adapters/base64uploadadapter';
 
 export default {
   data() {
@@ -81,12 +82,26 @@ export default {
           Image,
           ImageStyle,
           ImageUpload,
-          Base64UploadAdapter
+          SimpleUploadAdapter
         ],
 
         toolbar: {
           items: [ 'heading', '|', 'bold', 'italic', 'link', '|', 'imageUpload', '|', 'undo', 'redo' ],
         },
+
+        simpleUpload: {
+          // The URL that the images are uploaded to.
+          uploadUrl: 'http://example.com',
+
+          // Enable the XMLHttpRequest.withCredentials property.
+          withCredentials: true,
+
+          // Headers sent along with the XMLHttpRequest to the upload server.
+          headers: {
+            'X-CSRF-TOKEN': 'CSRF-Token',
+            Authorization: 'Bearer <JSON Web Token>'
+          }
+        }
       }
     }
   },
